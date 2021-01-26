@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 
 export default function App() {
@@ -17,5 +16,3 @@ export default function App() {
     </div>
   );
 }
-
-export default App;
