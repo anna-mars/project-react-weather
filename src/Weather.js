@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -90,6 +91,6 @@ export default function Weather(props) {
     const apiKey = "58a0b6e26263101abdfda8d9e9d3a0f0";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
-    return " Loading...";
+    return <Loader type="Puff" color="#0b4d74" height={100} width={100} />;
   }
 }
