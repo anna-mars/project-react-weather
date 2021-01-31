@@ -1,0 +1,16 @@
+.App {
+  max-width: 550px;
+  margin: 20px auto;
+}
+.App footer {
+  font-size: 12px;
+  margin: 8px 0;
+  color: #0b4d74;
+  font-weight: bold;
+}
+.App a {
+  color: #180705;
+}
+.App a:hover {
+  color: #9307ca;
+}

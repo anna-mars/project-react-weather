@@ -7,16 +7,16 @@ export default function Weather() {
         <div className="col-6">
           <form>
             <input
-              type="text"
+              type="search"
               placeholder="Search for a city"
               className="form-control"
-              autocomplete="off"
+              autoFocus="on"
             />
           </form>
         </div>
         <div className="col-6">
-          <input type="submit" value="🔍" className="btn btn-info" />
-          <button className="btn btn-info">📍</button>
+          <input type="submit" value="🔍" className="btn " />
+          <button className="btn ">📍</button>
         </div>
       </div>
       <div className="basic-weather">
@@ -32,26 +32,26 @@ export default function Weather() {
       </div>
       <div className="row">
         <div className="col-md-6">
-          <div className="clearfix weather-temperature">
+          <div className="clearfix ">
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
               alt="Rain"
               class="float-left"
             />
             <div className=" float-left">
-              <strong>28</strong>
+              <span className="temperature">28</span>
               <span className="units">°C |°F</span>
             </div>
           </div>
           <div className="present-temp">
             <ul>
-              <li>
+              <li className="main-max">
                 Max : <span>28</span>°
               </li>
-              <li>
+              <li className="main-min">
                 Min : <span>23</span>°
               </li>
-              <li>
+              <li className="feels-like">
                 Feels like : <span>23</span>°
               </li>
             </ul>
