@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
+import FormattedTime from "./FormattedTime";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -9,8 +10,7 @@ export default function Weather(props) {
     setWeatherData({
       city: response.data.name,
       country: response.data.sys.country,
-      date: "Sun 7:00",
-      time: "28.12.2020",
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       icon: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
       temperatureMax: Math.round(response.data.main.temp_max),
@@ -48,9 +48,10 @@ export default function Weather(props) {
           </h1>
           <ul>
             <li>
-              <span>{weatherData.date}</span>
+              <span>
+                <FormattedTime date={weatherData.date} />
+              </span>
             </li>
-            <li>{weatherData.time}</li>
           </ul>
         </div>
         <div className="row">
