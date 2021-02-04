@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-import FormattedTime from "./FormattedTime";
+import WeatherConditions from "./WeatherConditions";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -43,48 +43,7 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="basic-weather">
-          <h1>
-            <span>{weatherData.city}</span>,<span>{weatherData.country}</span>
-          </h1>
-          <ul>
-            <li>
-              <span>
-                <FormattedTime date={weatherData.date} />
-              </span>
-            </li>
-          </ul>
-        </div>
-        <div className="row">
-          <div className="col-md-6">
-            <div className="clearfix ">
-              <img src={weatherData.icon} alt="Rain" class="float-left" />
-              <div className=" float-left">
-                <span className="temperature">{weatherData.temperature}</span>
-                <span className="units">°C |°F</span>
-              </div>
-            </div>
-            <div className="present-temp">
-              <ul>
-                <li className="main-max">
-                  Max : {weatherData.temperatureMax} °
-                </li>
-                <li className="main-min">
-                  Min : {weatherData.temperatureMin} °
-                </li>
-                <li className="feels-like">
-                  Feels like : {weatherData.temperatureFeels}°
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <ul>
-              <li>Sky: {weatherData.sky}</li>
-              <li>Humidity: {weatherData.humidity} %</li>
-              <li>Wind: {weatherData.wind} km/h</li>
-              <li>Pressure: {weatherData.pressure} hPa</li>
-            </ul>
-          </div>
+          <WeatherConditions data={weatherData} />
         </div>
       </div>
     );
