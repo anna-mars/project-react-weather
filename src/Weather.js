@@ -6,7 +6,9 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ done: false });
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       city: response.data.name,
       country: response.data.sys.country,
@@ -23,34 +25,46 @@ export default function Weather(props) {
       done: true,
     });
   }
+  function search() {
+    const apiKey = "58a0b6e26263101abdfda8d9e9d3a0f0";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleSearchingCity(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.done) {
     return (
       <div className="Weather">
-        <div className="row">
-          <div className="col-6">
-            <form>
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-6">
               <input
                 type="search"
                 placeholder="Search for a city"
                 className="form-control"
                 autoFocus="on"
+                onChange={handleSearchingCity}
               />
-            </form>
+            </div>
+            <div className="col-6">
+              <input type="submit" value="🔍" className="btn " />
+              <button className="btn ">📍</button>
+            </div>
           </div>
-          <div className="col-6">
-            <input type="submit" value="🔍" className="btn " />
-            <button className="btn ">📍</button>
-          </div>
-        </div>
+        </form>
         <div className="basic-weather">
           <WeatherConditions data={weatherData} />
         </div>
       </div>
     );
   } else {
-    const apiKey = "58a0b6e26263101abdfda8d9e9d3a0f0";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return <Loader type="Puff" color="#0b4d74" height={100} width={100} />;
   }
 }
