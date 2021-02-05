@@ -14,7 +14,7 @@ export default function Weather(props) {
       country: response.data.sys.country,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
-      icon: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      icon: response.data.weather[0].icon,
       temperatureMax: Math.round(response.data.main.temp_max),
       temperatureMin: Math.round(response.data.main.temp_min),
       temperatureFeels: Math.round(response.data.main.feels_like),

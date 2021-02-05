@@ -29,12 +29,11 @@
 .Weather li:first-letter {
   text-transform: capitalize;
 }
-.Weather img {
+.Weather canvas {
+  margin-top: 10px;
   margin-right: 5px;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-size: 16px;
-  width: 70px;
-  height: 70px;
   display: inline-block;
 }
 .Weather .form-control {

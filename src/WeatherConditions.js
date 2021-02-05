@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedTime from "./FormattedTime";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherConditions(props) {
   return (
@@ -19,7 +20,9 @@ export default function WeatherConditions(props) {
       <div className="row">
         <div className="col-md-6">
           <div className="clearfix ">
-            <img src={props.data.icon} alt="Rain" class="float-left" />
+            <div className=" float-left">
+              <WeatherIcon code={props.data.icon} />
+            </div>
             <div className=" float-left">
               <span className="temperature">{props.data.temperature}</span>
               <span className="units">°C |°F</span>
