@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperatureConversion from "./WeatherTemperatureConversion";
 
 export default function WeatherConditions(props) {
   return (
@@ -24,8 +25,7 @@ export default function WeatherConditions(props) {
               <WeatherIcon code={props.data.icon} />
             </div>
             <div className=" float-left">
-              <span className="temperature">{props.data.temperature}</span>
-              <span className="units">°C |°F</span>
+              <WeatherTemperatureConversion celsius={props.data.temperature} />
             </div>
           </div>
           <div className="present-temp">
