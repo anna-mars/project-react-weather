@@ -80,3 +80,6 @@
 .Weather .present-temp .feels-like {
   font-size: 13px;
 }
+.Weather .weather-app-bottom {
+  color: white;
+}

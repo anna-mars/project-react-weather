@@ -1,0 +1,13 @@
+.WeatherForecast {
+  text-align: center;
+  margin: 15px 0;
+}
+.WeatherForecast .col canvas {
+  display: block;
+  margin: 6px auto;
+}
+@media (min-width: 768px) {
+  .ForecastPreview {
+    margin: 10px 15px;
+  }
+}

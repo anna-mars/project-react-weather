@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherConditions from "./WeatherConditions";
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ done: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    console.log(response);
     setWeatherData({
       city: response.data.name,
       country: response.data.sys.country,
@@ -22,11 +22,13 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       pressure: response.data.main.pressure,
+      lon: response.data.coord.lon,
+      lat: response.data.coord.lat,
       done: true,
     });
   }
   function search() {
-    const apiKey = "58a0b6e26263101abdfda8d9e9d3a0f0";
+    const apiKey = "b426f7367970b839034fbb8086165d3a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -41,25 +43,34 @@ export default function Weather(props) {
   if (weatherData.done) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-6">
-              <input
-                type="search"
-                placeholder="Search for a city"
-                className="form-control"
-                autoFocus="on"
-                onChange={handleSearchingCity}
-              />
+        <div class="weather-app-top">
+          <form onSubmit={handleSubmit}>
+            <div className="row">
+              <div className="col-6">
+                <input
+                  type="search"
+                  placeholder="Search for a city"
+                  className="form-control"
+                  autoFocus="on"
+                  onChange={handleSearchingCity}
+                />
+              </div>
+              <div className="col-6">
+                <input type="submit" value="🔍" className="btn " />
+                <button className="btn ">📍</button>
+              </div>
             </div>
-            <div className="col-6">
-              <input type="submit" value="🔍" className="btn " />
-              <button className="btn ">📍</button>
-            </div>
+          </form>
+          <div className="basic-weather">
+            <WeatherConditions data={weatherData} />
           </div>
-        </form>
-        <div className="basic-weather">
-          <WeatherConditions data={weatherData} />
+        </div>
+        <div class="weather-app-bottom">
+          <WeatherForecast
+            city={weatherData.city}
+            lon={weatherData.lon}
+            lat={weatherData.lat}
+          />
         </div>
       </div>
     );
