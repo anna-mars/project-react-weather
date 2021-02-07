@@ -13,7 +13,7 @@ export default function WeatherForecast(props) {
     setForecast(response.data);
     setLoaded(true);
   }
-  if (loaded) {
+  if (loaded && props.lat === forecast.lat && props.lon === forecast.lon) {
     return (
       <div className="WeatherForecast row">
         <WeatherForecastPreview data={forecast.daily[1]} />
