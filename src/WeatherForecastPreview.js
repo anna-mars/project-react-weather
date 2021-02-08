@@ -30,14 +30,14 @@ export default function WeatherForecastPreview(props) {
     return `${date}/${month}`;
   }
   return (
-    <div className="col">
+    <div className="col-2">
       <ul>
-        <li>{dayAndMonth()}</li>
-        <li>
+        <li className="day">{dayAndMonth()}</li>
+        <li className="image">
           <WeatherIcon code={props.data.weather[0].icon} />
         </li>
         <li className="temp-max">{Math.round(props.data.temp.max)} °C</li>
-        <li>{Math.round(props.data.temp.min)} °C</li>
+        <li className="temp-min">{Math.round(props.data.temp.min)} °C</li>
       </ul>
     </div>
   );

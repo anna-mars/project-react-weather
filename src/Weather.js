@@ -8,6 +8,7 @@ import "./Weather.css";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ done: false });
   const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setWeatherData({
       city: response.data.name,
@@ -55,9 +56,11 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div class="weather-app-top">
+          <h4>Weather Forecast</h4>
+
           <form onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-6">
+              <div className="col-7">
                 <input
                   type="search"
                   placeholder="Search for a city"
@@ -66,7 +69,7 @@ export default function Weather(props) {
                   onChange={handleSearchingCity}
                 />
               </div>
-              <div className="col-6">
+              <div className="col-4">
                 <input type="submit" value="🔍" className="btn " />
                 <button className="btn " onClick={getCurrentLocation}>
                   📍
@@ -78,7 +81,9 @@ export default function Weather(props) {
             <WeatherConditions data={weatherData} />
           </div>
         </div>
-        <div class="weather-app-bottom">
+        <div className="weather-app-bottom">
+          <h5>Daily Forecast</h5>
+          <hr />
           <WeatherForecast
             city={weatherData.city}
             lon={weatherData.lon}

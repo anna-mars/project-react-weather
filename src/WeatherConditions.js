@@ -20,7 +20,7 @@ export default function WeatherConditions(props) {
       </div>
       <div className="row">
         <div className="col-md-6">
-          <div className="clearfix ">
+          <div className="clearfix">
             <div className=" float-left">
               <WeatherIcon code={props.data.icon} />
             </div>

@@ -1,4 +1,10 @@
-.col .temp-max {
+.col-2 .day,
+.col-2 .image,
+.col-2 .temp-max,
+.col-2 .temp.min {
+  text-align: center;
+}
+.col-2 .temp-max {
   font-weight: bold;
   color: rgb(245, 150, 9);
 }
