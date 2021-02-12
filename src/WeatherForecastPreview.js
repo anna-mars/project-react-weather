@@ -29,16 +29,35 @@ export default function WeatherForecastPreview(props) {
 
     return `${date}/${month}`;
   }
-  return (
-    <div className="col-2">
-      <ul>
-        <li className="day">{dayAndMonth()}</li>
-        <li className="image">
-          <WeatherIcon code={props.data.weather[0].icon} />
-        </li>
-        <li className="temp-max">{Math.round(props.data.temp.max)} °C</li>
-        <li className="temp-min">{Math.round(props.data.temp.min)} °C</li>
-      </ul>
-    </div>
-  );
+  if (props.unit === "celsius") {
+    return (
+      <div className="col-2">
+        <ul>
+          <li className="day">{dayAndMonth()}</li>
+          <li className="image">
+            <WeatherIcon code={props.data.weather[0].icon} />
+          </li>
+          <li className="temp-max">{Math.round(props.data.temp.max)} °C</li>
+          <li className="temp-min">{Math.round(props.data.temp.min)} °C</li>
+        </ul>
+      </div>
+    );
+  } else {
+    return (
+      <div className="col-2">
+        <ul>
+          <li className="day">{dayAndMonth()}</li>
+          <li className="image">
+            <WeatherIcon code={props.data.weather[0].icon} />
+          </li>
+          <li className="temp-max">
+            {Math.round((props.data.temp.max * 9) / 5 + 32)} °C
+          </li>
+          <li className="temp-min">
+            {Math.round((props.data.temp.min * 9) / 5 + 32)} °C
+          </li>
+        </ul>
+      </div>
+    );
+  }
 }

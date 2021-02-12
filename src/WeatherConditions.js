@@ -2,6 +2,7 @@ import React from "react";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperatureConversion from "./WeatherTemperatureConversion";
+import WeatherTemperatureConversionTwo from "./WeatherTemperatureConversionTwo";
 
 export default function WeatherConditions(props) {
   return (
@@ -25,17 +26,22 @@ export default function WeatherConditions(props) {
               <WeatherIcon code={props.data.icon} />
             </div>
             <div className=" float-left">
-              <WeatherTemperatureConversion celsius={props.data.temperature} />
+              <WeatherTemperatureConversion
+                celsius={props.data.temperature}
+                unit={props.unit}
+                setUnit={props.setUnit}
+              />
             </div>
           </div>
           <div className="present-temp">
-            <ul>
-              <li className="main-max">Max : {props.data.temperatureMax} °</li>
-              <li className="main-min">Min : {props.data.temperatureMin} °</li>
-              <li className="feels-like">
-                Feels like : {props.data.temperatureFeels}°
-              </li>
-            </ul>
+            <WeatherTemperatureConversionTwo
+              celsius={props.data.temperature}
+              max={props.data.temperatureMax}
+              min={props.data.temperatureMin}
+              feels={props.data.temperatureFeels}
+              unit={props.unit}
+              setUnit={props.setUnit}
+            />
           </div>
         </div>
         <div className="col-md-6">
