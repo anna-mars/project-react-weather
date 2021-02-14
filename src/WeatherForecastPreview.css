@@ -8,7 +8,7 @@
   color: rgb(255, 253, 253);
   font-weight: 500;
 }
-.col.temp-max {
+.col .temp-max {
   font-weight: bold;
   color: rgb(245, 150, 9);
 }
