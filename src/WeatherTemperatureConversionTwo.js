@@ -5,9 +5,9 @@ export default function WeatherTemperatureConversionTwo(props) {
     return (
       <div className="WeatherConditionsTwo">
         <ul>
-          <li className="main-max">Max : {props.max} °</li>
-          <li className="main-min">Min : {props.min} °</li>
-          <li className="feels-like">Feels like : {props.feels}°</li>
+          <li className="main-max">Max : {props.max} °C</li>
+          <li className="main-min">Min : {props.min} °C</li>
+          <li className="feels-like">Feels like : {props.feels} °C</li>
         </ul>
       </div>
     );
@@ -16,13 +16,13 @@ export default function WeatherTemperatureConversionTwo(props) {
       <div className="WeatherConditionsTwo">
         <ul>
           <li className="main-max">
-            Max : {Math.round((props.max * 9) / 5 + 32)} °
+            Max : {Math.round((props.max * 9) / 5 + 32)} °F
           </li>
           <li className="main-min">
-            Min : {Math.round((props.min * 9) / 5 + 32)} °
+            Min : {Math.round((props.min * 9) / 5 + 32)} °F
           </li>
           <li className="feels-like">
-            Feels like : {Math.round((props.feels * 9) / 5 + 32)}°
+            Feels like : {Math.round((props.feels * 9) / 5 + 32)} °F
           </li>
         </ul>
       </div>

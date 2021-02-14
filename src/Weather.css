@@ -1,6 +1,6 @@
 .Weather {
   font-family: "Noticia Text", serif;
-  background-image: url("https://www.planetware.com/wpimages/2020/09/oregon-winter-best-places-to-visit-mount-hood.jpg");
+  background-image: url("https://gfx.radiozet.pl/var/radiozetsg/storage/images/podroze/halny-stworzyl-na-niebie-niezwykle-pejzaze.-zdjecia-z-polskich-gor-robia-furore/14861511-1-pol-PL/Halny-stworzyl-na-niebie-niezwykle-pejzaze.-Zdjecia-z-polskich-gor-robia-furore-w-sieci_article.webp");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding: 10px 15px;
@@ -10,14 +10,16 @@
 }
 .Weather h1 {
   font-size: 24px;
-  color: #000000;
+  color: rgb(245, 150, 9);
+  text-shadow: 0 0 0.2em rgb(42, 42, 44), 0 0 0.2em rgb(35, 40, 51),
+    0 0 0.2em rgb(37, 42, 54);
   font-weight: 500;
   line-height: 28px;
   margin-bottom: 0;
   margin-top: 7px;
 }
 .Weather h4 {
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
   font-family: "Lobster", cursive;
   color: rgb(245, 150, 9);
   text-shadow: 0 0 0.2em rgb(46, 92, 190), 0 0 0.2em rgb(46, 92, 190),
@@ -27,23 +29,32 @@
   border-radius: 5px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   padding: 4px;
+  max-width: 300px;
+  background-color: rgba(115, 175, 224, 0.2);
 }
 
 .Weather h5 {
-  margin-top: 10px;
+  margin: 10px auto;
   font-family: "Lobster", cursive;
   color: rgb(245, 150, 9);
   text-shadow: 0 0 0.2em rgb(46, 92, 190), 0 0 0.2em rgb(46, 92, 190),
     0 0 0.2em rgb(46, 92, 190);
   font-size: 25px;
   text-align: center;
+  background-color: rgb(126, 157, 218, 0.2);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 4px;
+  max-width: 250px;
 }
 .Weather ul {
   margin: 0;
   padding: 0;
 }
 .Weather li {
-  color: #ffffff;
+  color: rgb(233, 230, 227);
+  text-shadow: 0 0 0.2em rgb(42, 42, 44), 0 0 0.2em rgb(35, 40, 51),
+    0 0 0.2em rgb(37, 42, 54);
   list-style: none;
   font-size: 15px;
   font-weight: 500;
@@ -65,6 +76,7 @@
 }
 .Weather .form-control {
   border-radius: 30px;
+  background-color: rgba(232, 237, 240, 0.3);
   line-height: 1;
   padding-left: 10px;
   padding-right: 10px;

@@ -87,7 +87,6 @@ export default function Weather(props) {
         </div>
         <div className="weather-app-bottom">
           <h5>Daily Forecast</h5>
-          <hr />
           <WeatherForecast
             city={weatherData.city}
             lon={weatherData.lon}

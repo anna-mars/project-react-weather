@@ -1,10 +1,21 @@
-.col-2 .day,
-.col-2 .image,
-.col-2 .temp-max,
-.col-2 .temp.min {
+.col-sm .day,
+.col-sm .image,
+.col-sm .temp-max,
+.col-sm .temp.min {
   text-align: center;
 }
-.col-2 .temp-max {
+.col-sm .day {
+  color: rgb(255, 253, 253);
+  font-weight: 500;
+}
+.col-sm .temp-max {
   font-weight: bold;
   color: rgb(245, 150, 9);
+}
+.col-sm {
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  background-color: rgba(148, 172, 182, 0.7);
+  margin: 2px 5px;
+  padding: 5px;
 }
