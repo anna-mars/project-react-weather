@@ -31,7 +31,7 @@ export default function WeatherForecastPreview(props) {
   }
   if (props.unit === "celsius") {
     return (
-      <div className="col-sm">
+      <div className="col">
         <ul>
           <li className="day">{dayAndMonth()}</li>
           <li className="image">
@@ -44,7 +44,7 @@ export default function WeatherForecastPreview(props) {
     );
   } else {
     return (
-      <div className="col-sm">
+      <div className="col">
         <ul>
           <li className="day">{dayAndMonth()}</li>
           <li className="image">
