@@ -74,6 +74,32 @@
   border-radius: 20px;
   margin: 1px 0 5px 0;
 }
+.Weather .city-buttons button {
+  color: rgb(233, 230, 227);
+  text-shadow: 0 0 0.2em rgb(42, 42, 44), 0 0 0.2em rgb(35, 40, 51),
+    0 0 0.2em rgb(37, 42, 54);
+  font-weight: 500;
+  background-color: rgba(81, 111, 172, 0.4);
+  font-size: 16px;
+  padding: 3px 15px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
+  border: 0.5px solid rgba(81, 111, 172);
+}
+.Weather .city-buttons button:hover {
+  background-color: rgb(245, 150, 9, 0.3);
+  border: 0.5px solid rgb(245, 150, 9, 0.5);
+}
+.Weather .city-buttons ul {
+  list-style: none;
+  margin: 5px auto;
+  padding: 0;
+}
+.Weather .city-buttons li {
+  display: inline;
+  margin: 2px 5px;
+}
 .Weather .form-control {
   border-radius: 30px;
   background-color: rgba(232, 237, 240, 0.3);
@@ -90,7 +116,7 @@
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 .Weather .btn:hover {
-  background-color: rgb(245, 150, 9);
+  background-color: rgb(245, 150, 9, 0.5);
 }
 .Weather .temperature {
   color: #ffffff;

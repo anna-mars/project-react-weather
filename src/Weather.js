@@ -3,11 +3,15 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherConditions from "./WeatherConditions";
 import WeatherForecast from "./WeatherForecast";
+
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ done: false });
   const [city, setCity] = useState(props.defaultCity);
+  const cityKrakow = "Krakow";
+  const cityAmsterdam = "Amsterdam";
+  const cityBenidorm = "Benidorm";
   const [unit, setUnit] = useState("celsius");
 
   function handleResponse(response) {
@@ -34,13 +38,43 @@ export default function Weather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+  function searchAmsterdam() {
+    const apiKey = "b426f7367970b839034fbb8086165d3a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityAmsterdam}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function searchKrakow() {
+    const apiKey = "b426f7367970b839034fbb8086165d3a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityKrakow}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function searchBenidorm() {
+    const apiKey = "b426f7367970b839034fbb8086165d3a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityBenidorm}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
+  function handleSubmitAmsterdam(event) {
+    event.preventDefault();
+    searchAmsterdam();
+  }
+  function handleSubmitKrakow(event) {
+    event.preventDefault();
+    searchKrakow();
+  }
+  function handleSubmitBenidorm(event) {
+    event.preventDefault();
+    searchBenidorm();
+  }
+
   function handleSearchingCity(event) {
     setCity(event.target.value);
   }
+
   function getCurrentLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
@@ -58,6 +92,7 @@ export default function Weather(props) {
       <div className="Weather">
         <div className="weather-app-top">
           <h4>Weather Forecast</h4>
+
           <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-7">
@@ -77,6 +112,25 @@ export default function Weather(props) {
               </div>
             </div>
           </form>
+          <div className="city-buttons">
+            <ul>
+              <li className="amsterdam" onSubmit={handleSubmitAmsterdam}>
+                <button className="amsterdam" onClick={searchAmsterdam}>
+                  Amsterdam
+                </button>
+              </li>
+              <li onSubmit={handleSubmitKrakow}>
+                <button className="krakow" onClick={searchKrakow}>
+                  Krakow
+                </button>
+              </li>
+              <li onSubmit={handleSubmitBenidorm}>
+                <button className="benidorm" onClick={searchBenidorm}>
+                  Benidorm
+                </button>
+              </li>
+            </ul>
+          </div>
           <div className="basic-weather">
             <WeatherConditions
               data={weatherData}
