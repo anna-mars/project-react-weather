@@ -1,7 +1,7 @@
 .col .day,
 .col .image,
 .col .temp-max,
-.col.temp.min {
+.col .temp.min {
   text-align: center;
 }
 .col .day {
