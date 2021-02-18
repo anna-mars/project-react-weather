@@ -8,13 +8,13 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Stalowa Wola" />
         <footer>
-          This project was coded by Anna Frac and is {""}
+          This project was coded by Anna Frac and is open-sourced on {""}
           <a
             href="https://github.com/anna-mars/project-react-weather"
             target="-blank"
             className="open-source"
           >
-            open-sourced on GITHUB
+            GITHUB
           </a>
         </footer>
       </div>
